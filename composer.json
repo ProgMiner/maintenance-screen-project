@@ -1,0 +1,33 @@
+{
+    "name": "progminer/maintenance-screen-project",
+    "description": "The \"Maintenance mode\" screen for your site",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "ProgMiner",
+            "email": "eridan200@mail.ru"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "progminer/maintenance-screen": "^2.0"
+    },
+    "autoload": {
+        "files": [
+            "app/functions/boot.php"
+        ]
+    },
+    "config": {
+        "optimize-autoloader": true
+    },
+    "scripts": {
+        "clone-templates": [
+            "cp app/config/config.yml.template app/config/config.yml"
+        ],
+        "post-create-project-cmd": [
+            "@clone-templates"
+        ]
+    }
+}
