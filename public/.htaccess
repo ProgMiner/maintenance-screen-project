@@ -1,5 +1,3 @@
-RewriteEngine On
-
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteBase /
