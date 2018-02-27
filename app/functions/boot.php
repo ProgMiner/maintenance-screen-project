@@ -27,6 +27,10 @@ namespace MaintenanceScreen\Application;
 use MaintenanceScreen\MaintenanceScreen;
 use MaintenanceScreen\ConfigurationLoader;
 
+use MaintenanceScreen\TranslatorProvider\FilesystemTranslatorProvider;
+
+use MaintenanceScreen\TemplateRenderer\TwigTemplateRenderer;
+
 /**
  * Boot function
  *
@@ -37,22 +41,23 @@ function boot() {
         die('__ROOT__ is not defined');
     }
 
-    define('__LIB__', __ROOT__.'/vendor/progminer/maintenance-screen');
+    $translatorProvider = new FilesystemTranslatorProvider(
+        new ConfigurationLoader([__ROOT__.'/app/translations'])
+    );
 
-    $maintenanceScreen = MaintenanceScreen::makeFrom(
+    $twig = new \Twig_Environment(
+        new \Twig_Loader_Filesystem(
+            [__ROOT__.'/app/templates'],
+            __ROOT__
+        ),
+        ['cache' => __ROOT__.'/app/twig-cache']
+    );
+
+    $maintenanceScreen = MaintenanceScreen::fromConfigFile(
         'config.yml',
         new ConfigurationLoader([__ROOT__.'/app/config']),
-        new ConfigurationLoader([
-            __ROOT__.'/app/translations',
-            __LIB__.'/lib/Resources/translations'
-        ]),
-        new \Twig_Environment(
-            new \Twig_Loader_Filesystem([
-                __ROOT__.'/app/templates',
-                __LIB__.'/lib/Resources/templates'
-            ], __ROOT__),
-            ['cache' => __ROOT__.'/app/twig-cache']
-        )
+        $translatorProvider,
+        new TwigTemplateRenderer($twig)
     );
 
     $maintenanceScreen->send();

@@ -4,27 +4,33 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "d88154604626f7093302306ffb475740",
+    "content-hash": "c4184024b3c06947e2d90415aa34517f",
     "packages": [
         {
             "name": "progminer/maintenance-screen",
-            "version": "v2.0",
+            "version": "v3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ProgMiner/maintenance-screen.git",
-                "reference": "25edc16c42a9b671a54013bbeada0804a5fad094"
+                "reference": "bc7622c8c7fd71f06c6261e52c0e73211bee3bab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ProgMiner/maintenance-screen/zipball/25edc16c42a9b671a54013bbeada0804a5fad094",
-                "reference": "25edc16c42a9b671a54013bbeada0804a5fad094",
+                "url": "https://api.github.com/repos/ProgMiner/maintenance-screen/zipball/bc7622c8c7fd71f06c6261e52c0e73211bee3bab",
+                "reference": "bc7622c8c7fd71f06c6261e52c0e73211bee3bab",
                 "shasum": ""
             },
             "require": {
                 "symfony/config": "^4.0",
-                "symfony/http-foundation": "^4.0",
+                "symfony/http-foundation": "^4.0"
+            },
+            "require-dev": {
                 "symfony/yaml": "^4.0",
                 "twig/twig": "^2.4"
+            },
+            "suggest": {
+                "symfony/yaml": "To use the yaml file loader",
+                "twig/twig": "To use the twig template renderer"
             },
             "type": "library",
             "autoload": {
@@ -43,7 +49,7 @@
                 }
             ],
             "description": "The \"Maintenance mode\" screen library",
-            "time": "2018-02-24T10:52:13+00:00"
+            "time": "2018-02-27T12:41:42+00:00"
         },
         {
             "name": "symfony/config",
