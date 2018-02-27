@@ -12,7 +12,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "progminer/maintenance-screen": "dev-twig-splitting#132126380666fe9716b5c59e5b11a8eadc6e1a38",
+        "progminer/maintenance-screen": "dev-twig-splitting",
         "symfony/yaml": "^4.0",
         "twig/twig": "^2.4"
     },

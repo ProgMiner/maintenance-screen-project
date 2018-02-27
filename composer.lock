@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "fdbbe01519560e67d76192a4796d1e3b",
+    "content-hash": "04d39016e1ca3cb30eed103e3e2c9dd0",
     "packages": [
         {
             "name": "progminer/maintenance-screen",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ProgMiner/maintenance-screen.git",
-                "reference": "132126380666fe9716b5c59e5b11a8eadc6e1a38"
+                "reference": "728a0da33ac57b484a004f6453faf57bb450cea5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ProgMiner/maintenance-screen/zipball/132126380666fe9716b5c59e5b11a8eadc6e1a38",
-                "reference": "132126380666fe9716b5c59e5b11a8eadc6e1a38",
+                "url": "https://api.github.com/repos/ProgMiner/maintenance-screen/zipball/728a0da33ac57b484a004f6453faf57bb450cea5",
+                "reference": "728a0da33ac57b484a004f6453faf57bb450cea5",
                 "shasum": ""
             },
             "require": {
@@ -49,7 +49,7 @@
                 }
             ],
             "description": "The \"Maintenance mode\" screen library",
-            "time": "2018-02-26T23:23:04+00:00"
+            "time": "2018-02-27T08:02:09+00:00"
         },
         {
             "name": "symfony/config",

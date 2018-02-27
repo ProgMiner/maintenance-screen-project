@@ -42,19 +42,18 @@ function boot() {
     }
 
     $translatorProvider = new FilesystemTranslatorProvider(
-        new ConfigurationLoader([
-            __ROOT__.'/app/translations'
-        ])
+        new ConfigurationLoader([__ROOT__.'/app/translations'])
     );
 
     $twig = new \Twig_Environment(
-        new \Twig_Loader_Filesystem([
-            __ROOT__.'/app/templates'
-        ], __ROOT__),
+        new \Twig_Loader_Filesystem(
+            [__ROOT__.'/app/templates'],
+            __ROOT__
+        ),
         ['cache' => __ROOT__.'/app/twig-cache']
     );
 
-    $maintenanceScreen = MaintenanceScreen::makeFromConfigFile(
+    $maintenanceScreen = MaintenanceScreen::fromConfigFile(
         'config.yml',
         new ConfigurationLoader([__ROOT__.'/app/config']),
         $translatorProvider,
