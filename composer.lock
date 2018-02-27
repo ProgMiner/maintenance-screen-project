@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "04d39016e1ca3cb30eed103e3e2c9dd0",
+    "content-hash": "c4184024b3c06947e2d90415aa34517f",
     "packages": [
         {
             "name": "progminer/maintenance-screen",
-            "version": "dev-twig-splitting",
+            "version": "v3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ProgMiner/maintenance-screen.git",
-                "reference": "728a0da33ac57b484a004f6453faf57bb450cea5"
+                "reference": "bc7622c8c7fd71f06c6261e52c0e73211bee3bab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ProgMiner/maintenance-screen/zipball/728a0da33ac57b484a004f6453faf57bb450cea5",
-                "reference": "728a0da33ac57b484a004f6453faf57bb450cea5",
+                "url": "https://api.github.com/repos/ProgMiner/maintenance-screen/zipball/bc7622c8c7fd71f06c6261e52c0e73211bee3bab",
+                "reference": "bc7622c8c7fd71f06c6261e52c0e73211bee3bab",
                 "shasum": ""
             },
             "require": {
@@ -49,7 +49,7 @@
                 }
             ],
             "description": "The \"Maintenance mode\" screen library",
-            "time": "2018-02-27T08:02:09+00:00"
+            "time": "2018-02-27T12:41:42+00:00"
         },
         {
             "name": "symfony/config",
@@ -400,9 +400,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "progminer/maintenance-screen": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
