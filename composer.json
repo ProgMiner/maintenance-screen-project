@@ -12,7 +12,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "progminer/maintenance-screen": "dev-twig-splitting",
+        "progminer/maintenance-screen": "^3.0",
         "symfony/yaml": "^4.0",
         "twig/twig": "^2.4"
     },
@@ -22,7 +22,8 @@
         ]
     },
     "config": {
-        "optimize-autoloader": true
+        "optimize-autoloader": true,
+        "sort-packages": true
     },
     "scripts": {
         "clone-templates": [
