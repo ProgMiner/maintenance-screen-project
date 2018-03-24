@@ -36,7 +36,7 @@ Iridescent.init = function(body, text) {
 };
 
 Iridescent.getColor = function() {
-    var colorRedExp = /rgba?\(([0-9]{1,3}),([0-9]{1,3}),([0-9]{1,3})(,|\))/i,
+    var colorRegExp = /rgba?\(([0-9]{1,3}),([0-9]{1,3}),([0-9]{1,3})(,|\))/i,
         spaceRegExp = /\s/g;
 
     var matches = colorRegExp.exec(
@@ -51,9 +51,9 @@ Iridescent.getColor = function() {
 };
 
 Iridescent.setColor = function(color) {
-    var r = color.red,
-        g = color.green,
-        b = color.blue;
+    var r = Math.trunc(color.red),
+        g = Math.trunc(color.green),
+        b = Math.trunc(color.blue);
 
     Iridescent.body.style.backgroundColor = "rgb(" + r + ", " + g + ", " + b + ")";
     Iridescent.text.style.color = "rgb(" + (255 - r) + ", " + (255 - g) + ", " + (255 - b) + ")";

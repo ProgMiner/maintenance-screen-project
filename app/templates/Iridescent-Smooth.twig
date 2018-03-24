@@ -20,41 +20,27 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. #}
 
-{% extends "Default.twig" %}
-
-{% block head %}{{ parent() }}
-    <script type="text/javascript" src="/assets/Iridescent/script.js"></script>
-    <link type="text/css" rel="stylesheet" href="/assets/Iridescent/style.css">
-{% endblock %}
-
-{% block body %}
-    <div>{{ text }}</div>
-
-    <script type="text/javascript">
-{% block script %}
-    Iridescent.init(document.body, text = document.getElementsByTagName('div')[0]);
-    Iridescent.setColor(Iridescent.Color.random());
-
-    document.body.onmousemove = function(ev) {
-        var ev = ev || window.event, x, y;
-
-        var width = document.body.clientWidth,
-            height = document.body.clientHeight;
-
-        if (document.all) { 
-            x = ev.x + document.body.scrollLeft; 
-            y = ev.y + document.body.scrollTop; 
-        } else {
-            x = ev.pageX;
-            y = ev.pageY;
-        }
+{% extends "Iridescent.twig" %}
 
 {% block onmousemove %}
-        Iridescent.setColor(
-            Iridescent.Color.fromRelativeCoordinates(x / width, y / height)
-        );
+        target = Iridescent.Color.fromRelativeCoordinates(x / width, y / height);
 {% endblock %}
-    };
-{% endblock %}
-    </script>
+
+{% block script %}
+    var target = new Iridescent.Color();
+
+{{ parent() }}
+    target = Iridescent.getColor();
+
+    (function() {
+        var current = Iridescent.getColor();
+
+        var colorInterval = setInterval(function() {
+            current.red   += (target.red   - current.red  ) / 20;
+            current.green += (target.green - current.green) / 20;
+            current.blue  += (target.blue  - current.blue ) / 20;
+
+            Iridescent.setColor(current);
+        }, 10);
+    })();
 {% endblock %}
