@@ -18,13 +18,13 @@ $ composer create-project progminer/maintenance-screen-project
 
 After install you have a fully working site.
 
-You could add templates to `app/templates/`
-and choice current by change field `template_name` at `app/config/config.yml`.
+You can add templates to `app/templates/`
+and select the current template by changing the `template_name` field at `app/config/config.yml'.
 
-You could add translations to `app/translations/`
-and choice default language by change field `default_language` at `app/config/config.yml`.
+You can add translations to `app/translations/`
+and select the default language by changing the `default_language` field at `app/config/config.yml'.
 
-Also you could change site charset by set field `charset` at `app/config/config.yml`.
+Also you could change site charset by set `charset` field at `app/config/config.yml`.
 
 ## Contributing
 
