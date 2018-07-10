@@ -17,6 +17,7 @@ $ composer create-project progminer/maintenance-screen-project
 ## Usage
 
 After install you have a fully working site.
+Root of your maintenance screen site is `public/` directory.
 
 You can add templates to `app/templates/`
 and select the current template by changing the `template_name` field at `app/config/config.yml'.
@@ -25,6 +26,10 @@ You can add translations to `app/translations/`
 and select the default language by changing the `default_language` field at `app/config/config.yml'.
 
 Also you could change site charset by set `charset` field at `app/config/config.yml`.
+
+Also if you want to change the favicon of your site,
+replace file `public/favicon.ico` with your icon.
+For use other format edit template.
 
 ## Contributing
 
