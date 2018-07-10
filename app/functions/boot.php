@@ -24,12 +24,16 @@ SOFTWARE. */
 
 namespace MaintenanceScreen\Application;
 
-use MaintenanceScreen\MaintenanceScreen;
+use Symfony\Component\Config\FileLocator;
+
 use MaintenanceScreen\ConfigurationLoader;
+use MaintenanceScreen\MaintenanceScreen;
 
-use MaintenanceScreen\TranslatorProvider\FilesystemTranslatorProvider;
+use MaintenanceScreen\TranslatorProvider\ConfigurationTranslatorProvider;
 
-use MaintenanceScreen\TemplateRenderer\TwigTemplateRenderer;
+use MaintenanceScreen\FileLoader\YamlFileLoader;
+
+use ProgMinerUtils\TemplateRenderer\TwigTemplateRenderer;
 
 /**
  * Boot function
@@ -41,21 +45,21 @@ function boot() {
         die('__ROOT__ is not defined');
     }
 
-    $translatorProvider = new FilesystemTranslatorProvider(
-        new ConfigurationLoader([__ROOT__.'/app/translations'])
+    $translatorProvider = new ConfigurationTranslatorProvider(
+        new ConfigurationLoader([new YamlFileLoader(new FileLocator(__ROOT__.'/app/translations'))])
     );
 
-    $twig = new \Twig_Environment(
-        new \Twig_Loader_Filesystem(
+    $twig = new \Twig_Environment(new \Twig_Loader_Filesystem(
             [__ROOT__.'/app/templates'],
             __ROOT__
-        ),
-        ['cache' => __ROOT__.'/app/twig-cache']
-    );
+        ), [
+        'cache' => __ROOT__.'/app/twig-cache'
+    ]);
 
-    $maintenanceScreen = MaintenanceScreen::fromConfigFile(
-        'config.yml',
-        new ConfigurationLoader([__ROOT__.'/app/config']),
+    $configLoader = new ConfigurationLoader([new YamlFileLoader(new FileLocator(__ROOT__.'/app/config'))]);
+
+    $maintenanceScreen = new MaintenanceScreen(
+        $configLoader->load('config.yml'),
         $translatorProvider,
         new TwigTemplateRenderer($twig)
     );

@@ -12,7 +12,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "progminer/maintenance-screen": "^3.0",
+        "progminer/maintenance-screen": "^4.0",
         "symfony/yaml": "^4.0",
         "twig/twig": "^2.4"
     },
@@ -27,7 +27,8 @@
     },
     "scripts": {
         "clone-templates": [
-            "cp app/config/config.yml.template app/config/config.yml"
+            "cp app/config/config.yml.template app/config/config.yml",
+            "rm app/config/config.yml.template"
         ],
         "post-create-project-cmd": [
             "@clone-templates"

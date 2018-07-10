@@ -28,4 +28,5 @@ define('__ROOT__', __DIR__.'/..');
 
 require_once __ROOT__.'/vendor/autoload.php';
 
+// Function used for incapsulating variables
 boot();
