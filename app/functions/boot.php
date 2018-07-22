@@ -38,7 +38,7 @@ use ProgMinerUtils\TemplateRenderer\TwigTemplateRenderer;
 /**
  * Boot function
  *
- * @author ProgMiner
+ * @author Eridan Domoratskiy
  */
 function boot() {
     if (!defined('__ROOT__')) {
